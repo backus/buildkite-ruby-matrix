@@ -2,4 +2,4 @@
 
 # Mount the project as a read only filesystem to /app and pass
 # along any arugments that were provided to this script
-docker run --rm --volume "$(pwd):/app:ro" backus/mutest "$@"
+docker run --rm --volume "$(pwd):/app:ro" backus/ruby-matrix "$@"
