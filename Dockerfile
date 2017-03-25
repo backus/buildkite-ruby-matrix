@@ -15,10 +15,10 @@ ARG CC=/usr/bin/clang
 ARG CXX=/usr/bin/clang++
 
 # Use dkubb's bash strict mode to protect us from bash's many ugliness
-COPY build/strict-mode.sh /usr/local/sbin/strict-mode.sh
+COPY strict-mode.sh /usr/local/sbin/strict-mode.sh
 
 # Copy over a list of ruby versions to install
-COPY build/ruby_matrix /tmp
+COPY ruby_matrix /tmp
 
 # Enable strict mode by default
 ENV BASH_ENV=/usr/local/sbin/strict-mode.sh
@@ -59,13 +59,13 @@ RUN mkdir -p /src/app
 
 WORKDIR /src/app
 
-COPY build/docker-exec build/docker-exec
+COPY docker-exec docker-exec
 
 # Copy the bootstrap script used to setup the final image
-COPY build/docker-bootstrap.sh /usr/local/sbin
+COPY docker-bootstrap.sh /usr/local/sbin
 
 RUN docker-bootstrap.sh
 
 USER ci
 
-ENTRYPOINT ["build/docker-exec"]
+ENTRYPOINT ["./docker-exec"]
