@@ -1,0 +1,1 @@
+I have a custom build setup for [backus/mutest](https://github.com/backus/mutest) and [backus/rubocop-rspec](https://github.com/backus/rubocop-rspec). This is a WIP attempt to extract that to a submodule.
