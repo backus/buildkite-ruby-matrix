@@ -35,9 +35,6 @@ install_bundler_for_ruby_version(){
     chruby "$ruby_version"
 
     gem install bundler
-
-    # Hack to work around sickill/rainbow#44
-    gem install rake
   )
 }
 

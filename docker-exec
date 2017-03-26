@@ -24,6 +24,9 @@ chruby "$ruby_version"
 set -o nounset
 set -o noglob
 
+# Hack to work around sickill/rainbow#44
+gem install rake
+
 bundle --path /bundle
 
 bundle exec "$bundled_command"
