@@ -33,8 +33,11 @@ install_bundler_for_ruby_version(){
     set +o noglob;
     source /usr/local/share/chruby/chruby.sh
     chruby "$ruby_version"
-    gem update --system
+
     gem install bundler
+
+    # Hack to work around sickill/rainbow#44
+    gem install rake
   )
 }
 
