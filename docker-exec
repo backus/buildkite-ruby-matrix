@@ -24,6 +24,8 @@ chruby "$ruby_version"
 set -o nounset
 set -o noglob
 
+gem update --system
+
 bundle --path /bundle
 
 bundle exec "$bundled_command"
