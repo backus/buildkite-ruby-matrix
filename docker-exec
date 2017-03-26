@@ -25,7 +25,7 @@ set -o nounset
 set -o noglob
 
 # Hack to work around sickill/rainbow#44
-gem install rake
+bundle exec gem install rake -v '~> 11'
 
 bundle --path /bundle
 
